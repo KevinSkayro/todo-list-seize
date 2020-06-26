@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+/*Topbar style start*/
+.topbar {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #403c3c;
+}
+.topbar-logo {
+  flex: 1;
+}
+.day-selector {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.day-selector div {
+  margin: 0 20px;
+}
+.backwards-selector,
+.forwards-selector {
+  cursor: pointer;
+}
+
+/*Topbar style end*/
