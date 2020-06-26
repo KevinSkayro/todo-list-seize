@@ -14,84 +14,103 @@
           <img src="./IMG/Logo.png" alt="" />
         </div>
         <div class="day-selector">
-          <div class="backwards-selector"><i class="fas fa-angle-left"></i></div>
-          <div class="day-selected">
-            <span>Monday</span>
-          </div>
-          <div class="forwards-selector"><i class="fas fa-angle-right"></i></div>
-        </div>
-      </div>
-      <div class="side-bar">
-        <div class="todo-days">
-          <h3>DAYS</h3>
-          <div class="sunday">
-            <div class="sun-container">
-              <span>Sunday</span>
-            </div>
-            <div class="sun-tasks-nr">
-              <span>8</span>
-            </div>
-          </div>
-          <div class="monday">
-            <div class="mon-container">
+          <div class="day-selector-container">
+            <div class="backwards-selector"><i class="fas fa-angle-left"></i></div>
+            <div class="day-selected">
               <span>Monday</span>
             </div>
-            <div class="mon-tasks-nr">
-              <span>6</span>
-            </div>
-          </div>
-          <div class="tuesday">
-            <div class="tue-container">
-              <span>Tuesday</span>
-            </div>
-            <div class="tue-tasks-nr">
-              <span>9</span>
-            </div>
-          </div>
-          <div class="wednesday">
-            <div class="wed-container">
-              <span>Wednesday</span>
-            </div>
-            <div class="wed-tasks-nr">
-              <span>7</span>
-            </div>
-          </div>
-          <div class="thursday">
-            <div class="thu-container">
-              <span>Thursday</span>
-            </div>
-            <div class="thu-tasks-nr">
-              <span>2</span>
-            </div>
-          </div>
-          <div class="friday">
-            <div class="fri-container">
-              <span>Friday</span>
-            </div>
-            <div class="fri-tasks-nr">
-              <span>10</span>
-            </div>
-          </div>
-          <div class="saturday">
-            <div class="sat-container">
-              <span>Saturday</span>
-            </div>
-            <div class="sat-tasks-nr">
-              <span>5</span>
-            </div>
+            <div class="forwards-selector"><i class="fas fa-angle-right"></i></div>
           </div>
         </div>
-        <div class="todo-lists">
-          <h3>LISTS</h3>
-          <button><i class="fas fa-plus-circle"></i></button>
-        </div>
-        <div class="todo-calendar"></div>
       </div>
-      <div class="todo-list-main-container">
-        <div class="todo-list-input-container">
-          <div class="todo-list-input">
-            <input type="text" name="" id="" />
+      <div class="content-container">
+        <div class="side-bar">
+          <div class="todo-days">
+            <h3>DAYS</h3>
+            <div class="sunday week">
+              <div class="sun-container">
+                <span>Sunday</span>
+              </div>
+              <div class="tasks-nr">
+                <span>8</span>
+              </div>
+            </div>
+            <div class="monday week">
+              <div class="mon-container">
+                <span>Monday</span>
+              </div>
+              <div class="tasks-nr">
+                <span>6</span>
+              </div>
+            </div>
+            <div class="tuesday week">
+              <div class="tue-container">
+                <span>Tuesday</span>
+              </div>
+              <div class="tasks-nr">
+                <span>9</span>
+              </div>
+            </div>
+            <div class="wednesday week">
+              <div class="wed-container">
+                <span>Wednesday</span>
+              </div>
+              <div class="tasks-nr">
+                <span>7</span>
+              </div>
+            </div>
+            <div class="thursday week">
+              <div class="thu-container">
+                <span>Thursday</span>
+              </div>
+              <div class="tasks-nr">
+                <span>2</span>
+              </div>
+            </div>
+            <div class="friday week">
+              <div class="fri-container">
+                <span>Friday</span>
+              </div>
+              <div class="tasks-nr">
+                <span>10</span>
+              </div>
+            </div>
+            <div class="saturday week">
+              <div class="sat-container">
+                <span>Saturday</span>
+              </div>
+              <div class="tasks-nr">
+                <span>5</span>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="todo-lists">
+            <h3>LISTS</h3>
             <button><i class="fas fa-plus-circle"></i></button>
+          </div>
+          <div class="todo-calendar"></div>
+        </div>
+        <div class="todo-list-main-container">
+          <div class="todo-list-input-container">
+            <div class="todo-list-input">
+              <input type="text" name="todo-input" id="todo-input" placeholder="Add new task" />
+              <button><i class="fas fa-plus-circle"></i></button>
+            </div>
+            <div class="todo-list-options">
+              <div class="select-input">
+                <input type="checkbox" name="select-all" id="select-all" />
+                <span>Select All</span>
+              </div>
+              <button class="done"><i></i></button>
+              <button class="done"><i></i></button>
+              <button class="done"><i></i></button>
+              <select name="select-todo" id="select-todo">
+                <option value="all">All</option>
+                <option value="all">done</option>
+                <option value="all">uncompleted</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>

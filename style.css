@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+body {
+  overflow: hidden;
+}
 /*Topbar style start*/
 .topbar {
   position: relative;
@@ -19,15 +22,20 @@
 }
 .topbar-logo {
   flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
 }
 .day-selector {
   flex: 2;
   display: flex;
-  flex-direction: row;
-  color: #fff;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: 2rem;
+}
+.day-selector-container {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
 }
 .day-selector div {
   margin: 0 20px;
@@ -38,3 +46,102 @@
 }
 
 /*Topbar style end*/
+
+/*Sidebar style start*/
+.side-bar {
+  position: relative;
+  bottom: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #d9d9d9;
+}
+.content-container {
+  display: flex;
+  flex-direction: row;
+}
+.todo-days {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  justify-content: center;
+}
+.todo-days h3,
+.todo-lists h3 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.todo-days .week {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.week .tasks-nr {
+  background-color: #575353;
+  height: 1.8rem;
+  width: 3rem;
+  border-radius: 1rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+hr {
+  display: block;
+  border: 0;
+  border-top: 2px solid #a6a6a6;
+  margin: 0 1rem 1rem;
+}
+.todo-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.todo-lists button {
+  width: 6rem;
+  height: 2rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: #575353;
+  border: none;
+  border-radius: 0.5rem;
+}
+/*Sidebar style end*/
+
+/*todo main container style start*/
+.todo-list-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo-list-input-container {
+  flex-direction: column;
+  align-items: center;
+}
+.todo-list-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 2rem;
+  background-color: #d9d9d9;
+  padding: 0.6rem 1rem;
+  width: 80vw;
+  border-radius: 1rem;
+}
+.todo-list-input input,
+.todo-list-input button {
+  height: 3rem;
+  width: 100%;
+  background-color: #d9d9d9;
+  border: none;
+  font-size: 2rem;
+}
+.todo-list-input button {
+  width: 3rem;
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+/*todo main container style start*/
