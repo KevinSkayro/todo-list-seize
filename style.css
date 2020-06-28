@@ -149,9 +149,57 @@ hr {
 .todo-list-options {
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 }
 .todo-list-options > * {
   margin: 0.5%;
+  background-color: #575353;
+  color: #fff;
+  padding: 0.8rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+}
+.done,
+.delete {
+  padding: 0.8rem 2rem;
+}
+#select-todo {
+  -moz-appearance: none;
+  -ms-appearence: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0;
+  background-color: #575353;
+  color: #fff;
+  background-image: none;
+  cursor: pointer;
+  flex: 1;
+  padding: 0.8rem;
+}
+#select-todo::-ms-expand {
+  display: none;
+}
+.select-container {
+  position: relative;
+  display: flex;
+  width: 10rem;
+  overflow: hidden;
+  line-height: 3;
+  padding: 0;
+}
+.select-container::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  padding: 0 0.7rem 0 0;
 }
 
 /*todo main container style start*/
