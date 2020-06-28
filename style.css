@@ -164,6 +164,7 @@ hr {
 .delete {
   padding: 0.8rem 2rem;
 }
+
 #select-todo {
   -moz-appearance: none;
   -ms-appearence: none;
@@ -201,5 +202,9 @@ hr {
   transition: 0.25s all ease;
   padding: 0 0.7rem 0 0;
 }
-
+.todo-canvas {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
 /*todo main container style start*/

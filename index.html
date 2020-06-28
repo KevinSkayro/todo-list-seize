@@ -94,14 +94,11 @@
         <div class="todo-list-main-container">
           <div class="todo-list-input-container">
             <div class="todo-list-input">
-              <input type="text" name="todo-input" id="todo-input" placeholder="Add new task" />
-              <button><i class="fas fa-plus-circle"></i></button>
+              <input type="text" name="todo-input" class="todo-input" placeholder="Add new task" />
+              <button class="btn-input"><i class="fas fa-plus-circle"></i></button>
             </div>
             <div class="todo-list-options">
-              <div class="select-input">
-                <input type="checkbox" name="select-all" id="select-all" />
-                <span>Select All</span>
-              </div>
+              <label class="select-input"> <input type="checkbox" name="select-all" class="select-all" /> Select All </label>
               <button class="done"><i class="fas fa-check"></i></button>
               <button class="delete"><i class="fas fa-trash-alt"></i></button>
               <div class="select-container">
@@ -112,6 +109,9 @@
                 </select>
               </div>
             </div>
+          </div>
+          <div class="todo-canvas">
+            <ul class="todo-list"></ul>
           </div>
         </div>
       </div>
