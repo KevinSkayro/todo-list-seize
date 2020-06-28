@@ -115,33 +115,43 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  width: 100%;
 }
 .todo-list-input-container {
   flex-direction: column;
-  align-items: center;
+  width: 100%;
 }
 .todo-list-input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1rem 2rem;
+  margin: 1rem 3%;
   background-color: #d9d9d9;
   padding: 0.6rem 1rem;
-  width: 80vw;
+  width: 94%;
+
   border-radius: 1rem;
 }
 .todo-list-input input,
 .todo-list-input button {
   height: 3rem;
-  width: 100%;
+  width: 95%;
   background-color: #d9d9d9;
   border: none;
   font-size: 2rem;
 }
 .todo-list-input button {
-  width: 3rem;
+  width: 5%;
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+.todo-list-options {
+  display: flex;
+  align-items: center;
+}
+.todo-list-options > * {
+  margin: 0.5%;
 }
 
 /*todo main container style start*/
