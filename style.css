@@ -62,7 +62,7 @@ body {
 .todo-days {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  margin: 2rem 1rem;
   justify-content: center;
 }
 .todo-days h3,
@@ -76,6 +76,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 .week .tasks-nr {
   background-color: #575353;
@@ -108,9 +109,21 @@ hr {
   border: none;
   border-radius: 0.5rem;
 }
-.week {
-  cursor: pointer;
+/*selected day style*/
+
+.sunday.active,
+.monday.active,
+.tuesday.active,
+.wednesday.active,
+.thursday.active,
+.friday.active,
+.saturday.active {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 4px;
+  font-weight: 700;
 }
+
 /*Sidebar style end*/
 
 /*todo main container style start*/

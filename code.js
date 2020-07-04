@@ -44,7 +44,11 @@ function addTodoItem(event) {
     newItem.classList.add("todo-item");
 
     divItem.appendChild(newItem);
-    todoCanvas.appendChild(divItem);
+    for (let i = 0; i < todoDaysCanvas.length; i++) {
+      if (todoDaysCanvas[i].classList.contains("active")) {
+        todoDaysCanvas[i].appendChild(divItem);
+      }
+    }
   } else {
     alert("add some text before adding your task");
   }
@@ -52,36 +56,44 @@ function addTodoItem(event) {
 }
 function checkForActiveDay() {
   for (let i = 0; i < todoDaysCanvas.length; i++) {
-    if (todoDaysCanvas[i].classList.contains("active")) {
+    if (todoDaysCanvas[i].classList.contains("active") && todoDays[i].classList.contains("active")) {
       todoDaysCanvas[i].classList.remove("active");
+      todoDays[i].classList.remove("active");
     }
   }
 }
 function openSunday() {
   checkForActiveDay();
   day1.classList.add("active");
+  sunday.classList.add("active");
 }
 function openMonday() {
   checkForActiveDay();
   day2.classList.add("active");
+  monday.classList.add("active");
 }
 function openTuesday() {
   checkForActiveDay();
   day3.classList.add("active");
+  tuesday.classList.add("active");
 }
 function openWednensday() {
   checkForActiveDay();
   day4.classList.add("active");
+  wednesday.classList.add("active");
 }
 function openThursday() {
   checkForActiveDay();
   day5.classList.add("active");
+  thursday.classList.add("active");
 }
 function openFriday() {
   checkForActiveDay();
   day6.classList.add("active");
+  friday.classList.add("active");
 }
 function openSaturday() {
   checkForActiveDay();
   day7.classList.add("active");
+  saturday.classList.add("active");
 }
