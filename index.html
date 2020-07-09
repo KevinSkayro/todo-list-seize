@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body onload="FocusOnInput()">
     <div class="main-global">
       <div class="topbar">
         <div class="topbar-logo">
@@ -17,7 +17,7 @@
           <div class="day-selector-container">
             <div class="backwards-selector"><i class="fas fa-angle-left"></i></div>
             <div class="day-selected">
-              <span>Monday</span>
+              <span>Sunday</span>
             </div>
             <div class="forwards-selector"><i class="fas fa-angle-right"></i></div>
           </div>
@@ -29,58 +29,58 @@
             <h3>DAYS</h3>
             <div class="sunday week active">
               <div class="sun-container">
-                <span>Sunday</span>
+                <span class="target-day">Sunday</span>
               </div>
               <div class="tasks-nr">
-                <span>8</span>
+                <span class="task-num">8</span>
               </div>
             </div>
             <div class="monday week">
               <div class="mon-container">
-                <span>Monday</span>
+                <span class="target-day">Monday</span>
               </div>
               <div class="tasks-nr">
-                <span>6</span>
+                <span class="task-num">6</span>
               </div>
             </div>
             <div class="tuesday week">
               <div class="tue-container">
-                <span>Tuesday</span>
+                <span class="target-day">Tuesday</span>
               </div>
               <div class="tasks-nr">
-                <span>9</span>
+                <span class="task-num">9</span>
               </div>
             </div>
             <div class="wednesday week">
               <div class="wed-container">
-                <span>Wednesday</span>
+                <span class="target-day">Wednesday</span>
               </div>
               <div class="tasks-nr">
-                <span>7</span>
+                <span class="task-num">7</span>
               </div>
             </div>
             <div class="thursday week">
               <div class="thu-container">
-                <span>Thursday</span>
+                <span class="target-day">Thursday</span>
               </div>
               <div class="tasks-nr">
-                <span>2</span>
+                <span class="task-num">2</span>
               </div>
             </div>
             <div class="friday week">
               <div class="fri-container">
-                <span>Friday</span>
+                <span class="target-day">Friday</span>
               </div>
               <div class="tasks-nr">
-                <span>10</span>
+                <span class="task-num">10</span>
               </div>
             </div>
             <div class="saturday week">
               <div class="sat-container">
-                <span>Saturday</span>
+                <span class="target-day">Saturday</span>
               </div>
               <div class="tasks-nr">
-                <span>5</span>
+                <span class="task-num">5</span>
               </div>
             </div>
           </div>
@@ -94,8 +94,10 @@
         <div class="todo-list-main-container">
           <div class="todo-list-input-container">
             <div class="todo-list-input">
-              <input type="text" name="todo-input" class="todo-input" placeholder="Add new task" />
-              <button class="btn-input"><i class="fas fa-plus-circle"></i></button>
+              <form action="">
+                <input type="text" class="todo-input" placeholder="Add new task" />
+                <button type="submit" class="btn-input"><i class="fas fa-plus-circle"></i></button>
+              </form>
             </div>
             <div class="todo-list-options">
               <label class="select-input"> <input type="checkbox" name="select-all" class="select-all" /> Select All </label>
@@ -111,27 +113,13 @@
             </div>
           </div>
           <div class="todo-canvas">
-            <div class="todo-canva day1 active">
-              <ul class="todo-list"></ul>
-            </div>
-            <div class="todo-canva day2">
-              <ul class="todo-list"></ul>
-            </div>
-            <div class="todo-canva day3">
-              <ul class="todo-list"></ul>
-            </div>
-            <div class="todo-canva day4">
-              <ul class="todo-list"></ul>
-            </div>
-            <div class="todo-canva day5">
-              <ul class="todo-list"></ul>
-            </div>
-            <div class="todo-canva day6">
-              <ul class="todo-list"></ul>
-            </div>
-            <div class="todo-canva day7">
-              <ul class="todo-list"></ul>
-            </div>
+            <div class="todo-canva day1 active"></div>
+            <div class="todo-canva day2"></div>
+            <div class="todo-canva day3"></div>
+            <div class="todo-canva day4"></div>
+            <div class="todo-canva day5"></div>
+            <div class="todo-canva day6"></div>
+            <div class="todo-canva day7"></div>
           </div>
         </div>
       </div>

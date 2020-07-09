@@ -133,10 +133,22 @@ hr {
   align-items: center;
   flex: 1;
   width: 100%;
+  height: calc(100vh - 4rem);
 }
 .todo-list-input-container {
   flex-direction: column;
   width: 100%;
+}
+.todo-canvas {
+  width: 100%;
+  height: 100%;
+}
+.todo-canva {
+  width: calc(100vw - 250px);
+  height: calc(100vh - 221.933px);
+  position: absolute;
+  transform: translateY(100%);
+  overflow-y: scroll;
 }
 .todo-list-input {
   display: flex;
@@ -148,6 +160,11 @@ hr {
   width: 94%;
 
   border-radius: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .todo-list-input input,
 .todo-list-input button {
@@ -218,17 +235,7 @@ hr {
   transition: 0.25s all ease;
   padding: 0 0.7rem 0 0;
 }
-.todo-canvas {
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-}
-.todo-canva {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform: translateY(100%);
-}
+
 .day1.active {
   background-color: rgba(105, 25, 158, 0.3);
   transform: translateY(0);
@@ -258,4 +265,14 @@ hr {
   transform: translateY(0);
 }
 
-/*todo main container style start*/
+/*style of generated tasks*/
+.todo-container {
+  background-color: #fff;
+  margin: 0.6rem 2.5%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  list-style: none;
+  width: 95%;
+}
+
+/*todo main container style end*/
