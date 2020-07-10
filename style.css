@@ -273,6 +273,10 @@ form {
   border-radius: 0.5rem;
   list-style: none;
   width: 95%;
+  display: flex;
+}
+.task-checkbox {
+  margin: 0 1rem;
 }
 
 /*todo main container style end*/

@@ -42,26 +42,38 @@ function addTodoItem(event) {
     const divItem = document.createElement("div");
     divItem.classList.add("todo-container");
     //adding classes to identify different day's tasks
+    const checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.classList.add("task-checkbox");
+
     if (day1.classList.contains("active")) {
       divItem.classList.add("d1");
+      checkBox.classList.add("check1");
     } else if (day2.classList.contains("active")) {
       divItem.classList.add("d2");
+      checkBox.classList.add("check2");
     } else if (day3.classList.contains("active")) {
       divItem.classList.add("d3");
+      checkBox.classList.add("check3");
     } else if (day4.classList.contains("active")) {
       divItem.classList.add("d4");
+      checkBox.classList.add("check4");
     } else if (day5.classList.contains("active")) {
       divItem.classList.add("d5");
+      checkBox.classList.add("check5");
     } else if (day6.classList.contains("active")) {
       divItem.classList.add("d6");
+      checkBox.classList.add("check6");
     } else {
       divItem.classList.add("d7");
+      checkBox.classList.add("check7");
     }
 
     const newItem = document.createElement("li");
     newItem.innerText = todoInput.value;
     newItem.classList.add("todo-item");
-    //this appends the input to the active day in the app
+    //this appends the input and checkbox to the active day in the app
+    divItem.appendChild(checkBox);
     divItem.appendChild(newItem);
     for (let i = 0; i < todoDaysCanvas.length; i++) {
       if (todoDaysCanvas[i].classList.contains("active")) {
