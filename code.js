@@ -61,7 +61,8 @@ function addTodoItem(event) {
     const newItem = document.createElement("li");
     newItem.innerText = todoInput.value;
     newItem.classList.add("todo-item");
-    // newItem.setAttribute("value", "1");
+
+    newItem.setAttribute("value", "1");
     //this appends the input to the active day in the app
     divItem.appendChild(newItem);
     for (let i = 0; i < todoDaysCanvas.length; i++) {
@@ -72,7 +73,15 @@ function addTodoItem(event) {
   } else {
     alert("Add some text before adding your task");
   }
-  // updateTaskNum();
+  // Update the tasks quantity num on sidebar
+  (function () {
+    for (let i = 0; i < todoDays.length; i++) {
+      if (todoDays[i].classList.contains("active")) {
+        taskNum[i].innerText++;
+      }
+    }
+  })();
+
   todoInput.value = "";
 }
 //checks for which day is active, and checks when user clicks on diferent day and performs the change
@@ -132,12 +141,11 @@ function openSaturday() {
   day7.classList.add("active");
   saturday.classList.add("active");
 }
-//Update the tasks quantity num on sidebar
-// function updateTaskNum() {
+// Update the tasks quantity num on sidebar
+// (function () {
 //   for (let i = 0; i < todoDays.length; i++) {
 //     if (todoDays[i].classList.contains("active")) {
-//       taskNum[i].innerText = todoItem.length;
-//       console.dir(todoItem);
+//       taskNum[i].innerText++;
 //     }
 //   }
-// }
+// })();
