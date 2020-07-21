@@ -268,15 +268,35 @@ form {
 /*style of generated tasks*/
 .todo-container {
   background-color: #fff;
-  margin: 0.6rem 2.5%;
+  margin: 0.6rem 2%;
   padding: 0.5rem;
   border-radius: 0.5rem;
   list-style: none;
-  width: 95%;
+  width: 96%;
   display: flex;
+  justify-content: space-between;
+}
+.todo-item {
+  flex: 1;
+  font-size: 1.3rem;
 }
 .task-checkbox {
   margin: 0 1rem;
+}
+/*task btns*/
+.completed-btn,
+.trash-btn {
+  cursor: pointer;
+  border: none;
+  padding: 0.3rem 1.2rem;
+  margin: 0 0.2rem;
+  background-color: #575353;
+  color: #fff;
+  border-radius: 0.3rem;
+}
+.fa-check,
+.fa-trash-alt {
+  pointer-events: none;
 }
 
 /*todo main container style end*/

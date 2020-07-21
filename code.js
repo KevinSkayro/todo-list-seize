@@ -7,6 +7,8 @@ const daySelected = document.querySelector(".day-selected");
 const targetday = document.querySelectorAll(".target-day");
 const taskNum = document.querySelectorAll(".task-num");
 const todoItem = document.querySelectorAll(".todo-container");
+const trashBtn = document.querySelector(".trash-btn");
+
 //days of the week selectors
 const sunday = document.querySelector(".sunday");
 const monday = document.querySelector(".monday");
@@ -32,6 +34,14 @@ wednesday.addEventListener("click", openWednensday);
 thursday.addEventListener("click", openThursday);
 friday.addEventListener("click", openFriday);
 saturday.addEventListener("click", openSaturday);
+//deleteItem event listeners for each day
+day1.addEventListener("click", deleteItem);
+day2.addEventListener("click", deleteItem);
+day3.addEventListener("click", deleteItem);
+day4.addEventListener("click", deleteItem);
+day5.addEventListener("click", deleteItem);
+day6.addEventListener("click", deleteItem);
+day7.addEventListener("click", deleteItem);
 
 //Functions
 function addTodoItem(event) {
@@ -42,57 +52,36 @@ function addTodoItem(event) {
     const divItem = document.createElement("div");
     divItem.classList.add("todo-container");
     //adding classes to identify different day's tasks
-    const checkBox = document.createElement("input");
-    checkBox.type = "checkbox";
-    checkBox.classList.add("task-checkbox");
-
-    if (day1.classList.contains("active")) {
-      divItem.classList.add("d1");
-      checkBox.classList.add("check1");
-    } else if (day2.classList.contains("active")) {
-      divItem.classList.add("d2");
-      checkBox.classList.add("check2");
-    } else if (day3.classList.contains("active")) {
-      divItem.classList.add("d3");
-      checkBox.classList.add("check3");
-    } else if (day4.classList.contains("active")) {
-      divItem.classList.add("d4");
-      checkBox.classList.add("check4");
-    } else if (day5.classList.contains("active")) {
-      divItem.classList.add("d5");
-      checkBox.classList.add("check5");
-    } else if (day6.classList.contains("active")) {
-      divItem.classList.add("d6");
-      checkBox.classList.add("check6");
-    } else {
-      divItem.classList.add("d7");
-      checkBox.classList.add("check7");
-    }
-
     const newItem = document.createElement("li");
     newItem.innerText = todoInput.value;
     newItem.classList.add("todo-item");
-    //this appends the input and checkbox to the active day in the app
-    divItem.appendChild(checkBox);
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    //this appends the input to the active day in the app
     divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
     for (let i = 0; i < todoDaysCanvas.length; i++) {
       if (todoDaysCanvas[i].classList.contains("active")) {
         todoDaysCanvas[i].appendChild(divItem);
       }
     }
+    todoInput.value = "";
   } else {
     alert("Add some text before adding your task");
   }
-  // Update the tasks quantity num on sidebar
-  (function () {
-    for (let i = 0; i < todoDays.length; i++) {
-      if (todoDays[i].classList.contains("active")) {
-        taskNum[i].innerText++;
-      }
+  // Updates the tasks quantity num on sidebar
+  for (let i = 0; i < todoDays.length; i++) {
+    if (todoDays[i].classList.contains("active")) {
+      taskNum[i].innerText++;
     }
-  })();
-
-  todoInput.value = "";
+  }
 }
 //checks for which day is active, and checks when user clicks on diferent day and performs the change
 function checkForActiveDay() {
@@ -150,4 +139,21 @@ function openSaturday() {
   daySelected.innerText = "Saturday";
   day7.classList.add("active");
   saturday.classList.add("active");
+}
+//Delete task items
+function deleteItem(e) {
+  let item = e.target;
+  if (item.classList[0] === "trash-btn") {
+    let deleteItem = item.parentElement;
+    deleteItem.remove();
+  }
+  // Updates the tasks quantity num on sidebar
+  for (let i = 0; i < todoDays.length; i++) {
+    if (todoDays[i].classList.contains("active")) {
+      taskNum[i].innerText--;
+    }
+  }
+
+  // deleteItem.classList.add("fall");
+  // removeLocalTodos(deleteItem)
 }
