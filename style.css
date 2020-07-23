@@ -136,7 +136,8 @@ hr {
   height: calc(100vh - 4rem);
 }
 .todo-list-input-container {
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   width: 100%;
 }
 .todo-canvas {
@@ -145,7 +146,7 @@ hr {
 }
 .todo-canva {
   width: calc(100vw - 250px);
-  height: calc(100vh - 221.933px);
+  height: calc(100vh - 163.2px);
   position: absolute;
   transform: translateY(100%);
   overflow-y: scroll;
@@ -157,8 +158,8 @@ hr {
   margin: 1rem 3%;
   background-color: #d9d9d9;
   padding: 0.6rem 1rem;
-  width: 94%;
-
+  /* width: 0%; */
+  flex: 1;
   border-radius: 1rem;
 }
 form {
@@ -182,20 +183,6 @@ form {
 .todo-list-options {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
-}
-.todo-list-options > * {
-  margin: 0.5%;
-  background-color: #575353;
-  color: #fff;
-  padding: 0.8rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 0.5rem;
-}
-.done,
-.delete {
-  padding: 0.8rem 2rem;
 }
 
 #select-todo {
@@ -222,7 +209,13 @@ form {
   width: 10rem;
   overflow: hidden;
   line-height: 3;
-  padding: 0;
+  padding: 0.2rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 0 20px 0 0;
+  background-color: #575353;
 }
 .select-container::after {
   content: "\25BC";
@@ -236,38 +229,19 @@ form {
   padding: 0 0.7rem 0 0;
 }
 
-.day1.active {
-  background-color: rgba(105, 25, 158, 0.3);
-  transform: translateY(0);
-}
-.day2.active {
-  background-color: rgba(49, 58, 133, 0.3);
-  transform: translateY(0);
-}
-.day3.active {
-  background-color: rgba(25, 116, 158, 0.3);
-  transform: translateY(0);
-}
-.day4.active {
-  background-color: rgba(49, 133, 112, 0.3);
-  transform: translateY(0);
-}
-.day5.active {
-  background-color: rgba(49, 133, 74, 0.3);
-  transform: translateY(0);
-}
-.day6.active {
-  background-color: rgba(108, 133, 49, 0.3);
-  transform: translateY(0);
-}
+.day1.active,
+.day2.active,
+.day3.active,
+.day4.active,
+.day5.active,
+.day6.active,
 .day7.active {
-  background-color: rgba(133, 99, 49, 0.3);
   transform: translateY(0);
 }
 
 /*style of generated tasks*/
 .todo-container {
-  background-color: #fff;
+  background-color: #d9d9d9;
   margin: 0.6rem 2%;
   padding: 0.5rem;
   border-radius: 0.5rem;

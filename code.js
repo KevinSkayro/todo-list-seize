@@ -146,13 +146,13 @@ function deleteItem(e) {
   if (item.classList[0] === "trash-btn") {
     let deleteItem = item.parentElement;
     deleteItem.remove();
-  }
-  // Updates the tasks quantity num on sidebar
-  for (let i = 0; i < todoDays.length; i++) {
-    if (todoDays[i].classList.contains("active")) {
-      taskNum[i].innerText--;
+    for (let i = 0; i < todoDays.length; i++) {
+      if (todoDays[i].classList.contains("active")) {
+        taskNum[i].innerText--;
+      }
     }
   }
+  // Updates the tasks quantity num on sidebar
 
   // deleteItem.classList.add("fall");
   // removeLocalTodos(deleteItem)
