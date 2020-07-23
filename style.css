@@ -150,39 +150,43 @@ hr {
   position: absolute;
   transform: translateY(100%);
   overflow-y: scroll;
+  min-width: 740px;
 }
 .todo-list-input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1rem 3%;
+  margin: 1rem 2%;
   background-color: #d9d9d9;
   padding: 0.6rem 1rem;
   /* width: 0%; */
   flex: 1;
   border-radius: 1rem;
 }
-form {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
 .todo-list-input input,
 .todo-list-input button {
   height: 3rem;
-  width: 95%;
   background-color: #d9d9d9;
   border: none;
   font-size: 2rem;
 }
+.todo-list-input input {
+  flex: 1;
+}
 .todo-list-input button {
-  width: 5%;
+  width: 48px;
   cursor: pointer;
-  font-size: 2rem;
 }
 .todo-list-options {
   display: flex;
   align-items: center;
+  margin: 0 2% 0 0;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 #select-todo {
@@ -214,7 +218,6 @@ form {
   cursor: pointer;
   border: none;
   border-radius: 0.5rem;
-  margin: 0 20px 0 0;
   background-color: #575353;
 }
 .select-container::after {
@@ -272,5 +275,9 @@ form {
 .fa-trash-alt {
   pointer-events: none;
 }
-
+/*Completed tasks style*/
+.completed {
+  text-decoration: line-through;
+  color: #575353;
+}
 /*todo main container style end*/

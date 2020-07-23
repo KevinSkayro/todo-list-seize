@@ -8,6 +8,7 @@ const targetday = document.querySelectorAll(".target-day");
 const taskNum = document.querySelectorAll(".task-num");
 const todoItem = document.querySelectorAll(".todo-container");
 const trashBtn = document.querySelector(".trash-btn");
+const completedBtn = document.querySelector(".completed-btn");
 
 //days of the week selectors
 const sunday = document.querySelector(".sunday");
@@ -151,6 +152,12 @@ function deleteItem(e) {
         taskNum[i].innerText--;
       }
     }
+  }
+  if (item.classList[0] === "completed-btn") {
+    const completedItem = item.parentElement;
+    completedItem.classList.toggle("completed");
+    completedBtn.classList.toggle("completedBtn");
+    trashBtn.classList.toggle("completedTrashBtn");
   }
   // Updates the tasks quantity num on sidebar
 
