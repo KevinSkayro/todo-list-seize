@@ -43,6 +43,14 @@ body {
 .backwards-selector,
 .forwards-selector {
   cursor: pointer;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-angle-right:hover,
+.fa-angle-left:hover {
+  font-size: 2.3rem;
 }
 
 /*Topbar style end*/
@@ -244,7 +252,7 @@ form {
 
 /*style of generated tasks*/
 .todo-container {
-  background-color: #d9d9d9;
+  background-color: #575353;
   margin: 0.6rem 2%;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -252,6 +260,7 @@ form {
   width: 96%;
   display: flex;
   justify-content: space-between;
+  color: #fff;
 }
 .todo-item {
   flex: 1;
@@ -267,9 +276,13 @@ form {
   border: none;
   padding: 0.3rem 1.2rem;
   margin: 0 0.2rem;
-  background-color: #575353;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   border-radius: 0.3rem;
+}
+.completed-btn:hover,
+.trash-btn:hover {
+  box-shadow: 0 0 3px 3px #d9d9d9;
 }
 .fa-check,
 .fa-trash-alt {
@@ -278,6 +291,8 @@ form {
 /*Completed tasks style*/
 .completed {
   text-decoration: line-through;
-  color: #575353;
+  color: #d9d9d9;
+  background-color: #a6a6a6;
 }
+
 /*todo main container style end*/

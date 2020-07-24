@@ -45,9 +45,9 @@ day6.addEventListener("click", deleteItem);
 day7.addEventListener("click", deleteItem);
 
 //Functions
-function addTodoItem(event) {
+function addTodoItem(e) {
   //prevent btn from reseting page
-  event.preventDefault();
+  e.preventDefault();
   //if statement to avoid the input of empty tasks
   if (todoInput.value.length != 0) {
     const divItem = document.createElement("div");
@@ -156,8 +156,6 @@ function deleteItem(e) {
   if (item.classList[0] === "completed-btn") {
     const completedItem = item.parentElement;
     completedItem.classList.toggle("completed");
-    completedBtn.classList.toggle("completedBtn");
-    trashBtn.classList.toggle("completedTrashBtn");
   }
   // Updates the tasks quantity num on sidebar
 
