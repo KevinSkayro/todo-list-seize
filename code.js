@@ -63,15 +63,20 @@ function addTodoItem(e) {
     const trashBtn = document.createElement("button");
     trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
     trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
     //this appends the input to the active day in the app
     divItem.appendChild(newItem);
     divItem.appendChild(completedBtn);
     divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
     for (let i = 0; i < todoDaysCanvas.length; i++) {
       if (todoDaysCanvas[i].classList.contains("active")) {
         todoDaysCanvas[i].appendChild(divItem);
       }
     }
+    // Updates the tasks quantity num on sidebar
     for (let i = 0; i < todoDays.length; i++) {
       if (todoDays[i].classList.contains("active")) {
         taskNum[i].innerText++;
@@ -81,7 +86,6 @@ function addTodoItem(e) {
   } else {
     alert("Add some text before adding your task");
   }
-  // Updates the tasks quantity num on sidebar
 }
 //checks for which day is active, and checks when user clicks on diferent day and performs the change
 function checkForActiveDay() {

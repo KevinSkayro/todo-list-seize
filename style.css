@@ -276,7 +276,8 @@ form {
 }
 /*task btns*/
 .completed-btn,
-.trash-btn {
+.trash-btn,
+.timer-btn {
   cursor: pointer;
   border: none;
   padding: 0.3rem 1.2rem;
@@ -286,11 +287,13 @@ form {
   border-radius: 0.3rem;
 }
 .completed-btn:hover,
-.trash-btn:hover {
+.trash-btn:hover,
+.timer-btn:hover {
   box-shadow: 0 0 3px 3px #d9d9d9;
 }
 .fa-check,
-.fa-trash-alt {
+.fa-trash-alt,
+.fa-clock {
   pointer-events: none;
 }
 /*Completed tasks style*/
