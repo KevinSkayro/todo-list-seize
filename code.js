@@ -7,9 +7,7 @@ const daySelected = document.querySelector(".day-selected");
 const targetday = document.querySelectorAll(".target-day");
 const taskNum = document.querySelectorAll(".task-num");
 const todoItem = document.querySelectorAll(".todo-container");
-const trashBtn = document.querySelector(".trash-btn");
-const completedBtn = document.querySelector(".completed-btn");
-
+const topBarDaySelector = document.querySelector(".day-selector-container");
 //days of the week selectors
 const sunday = document.querySelector(".sunday");
 const monday = document.querySelector(".monday");
@@ -35,6 +33,7 @@ wednesday.addEventListener("click", openWednensday);
 thursday.addEventListener("click", openThursday);
 friday.addEventListener("click", openFriday);
 saturday.addEventListener("click", openSaturday);
+topBarDaySelector.addEventListener("click", daySelector);
 //deleteItem event listeners for each day
 day1.addEventListener("click", deleteItem);
 day2.addEventListener("click", deleteItem);
@@ -73,16 +72,16 @@ function addTodoItem(e) {
         todoDaysCanvas[i].appendChild(divItem);
       }
     }
+    for (let i = 0; i < todoDays.length; i++) {
+      if (todoDays[i].classList.contains("active")) {
+        taskNum[i].innerText++;
+      }
+    }
     todoInput.value = "";
   } else {
     alert("Add some text before adding your task");
   }
   // Updates the tasks quantity num on sidebar
-  for (let i = 0; i < todoDays.length; i++) {
-    if (todoDays[i].classList.contains("active")) {
-      taskNum[i].innerText++;
-    }
-  }
 }
 //checks for which day is active, and checks when user clicks on diferent day and performs the change
 function checkForActiveDay() {
@@ -157,8 +156,55 @@ function deleteItem(e) {
     const completedItem = item.parentElement;
     completedItem.classList.toggle("completed");
   }
-  // Updates the tasks quantity num on sidebar
+}
 
-  // deleteItem.classList.add("fall");
-  // removeLocalTodos(deleteItem)
+function daySelector(e) {
+  let item = e.target;
+  if (item.classList[0] === "backwards-selector") {
+    if (day7.classList.contains("active")) {
+      checkForActiveDay();
+      openFriday();
+    } else if (day6.classList.contains("active")) {
+      checkForActiveDay();
+      openThursday();
+    } else if (day5.classList.contains("active")) {
+      checkForActiveDay();
+      openWednensday();
+    } else if (day4.classList.contains("active")) {
+      checkForActiveDay();
+      openTuesday();
+    } else if (day3.classList.contains("active")) {
+      checkForActiveDay();
+      openMonday();
+    } else if (day2.classList.contains("active")) {
+      checkForActiveDay();
+      openSunday();
+    } else {
+      checkForActiveDay();
+      openSaturday();
+    }
+  } else if (item.classList[0] === "forwards-selector") {
+    if (day1.classList.contains("active")) {
+      checkForActiveDay();
+      openMonday();
+    } else if (day2.classList.contains("active")) {
+      checkForActiveDay();
+      openTuesday();
+    } else if (day3.classList.contains("active")) {
+      checkForActiveDay();
+      openWednensday();
+    } else if (day4.classList.contains("active")) {
+      checkForActiveDay();
+      openThursday();
+    } else if (day5.classList.contains("active")) {
+      checkForActiveDay();
+      openFriday();
+    } else if (day6.classList.contains("active")) {
+      checkForActiveDay();
+      openSaturday();
+    } else {
+      checkForActiveDay();
+      openSunday();
+    }
+  }
 }

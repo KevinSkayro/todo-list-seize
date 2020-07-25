@@ -40,6 +40,11 @@ body {
 .day-selector div {
   margin: 0 20px;
 }
+.day-selected {
+  width: 180px;
+  display: flex;
+  justify-content: center;
+}
 .backwards-selector,
 .forwards-selector {
   cursor: pointer;
@@ -48,9 +53,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-.fa-angle-right:hover,
-.fa-angle-left:hover {
-  font-size: 2.3rem;
+.fa-angle-right,
+.fa-angle-left {
+  pointer-events: none;
 }
 
 /*Topbar style end*/
