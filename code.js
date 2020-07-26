@@ -8,6 +8,8 @@ const targetday = document.querySelectorAll(".target-day");
 const taskNum = document.querySelectorAll(".task-num");
 const todoItem = document.querySelectorAll(".todo-container");
 const topBarDaySelector = document.querySelector(".day-selector-container");
+const timerPopup = document.querySelector(".timer-popup-container");
+const timerCloseBtn = document.querySelector(".close-popup-btn");
 //days of the week selectors
 const sunday = document.querySelector(".sunday");
 const monday = document.querySelector(".monday");
@@ -34,14 +36,15 @@ thursday.addEventListener("click", openThursday);
 friday.addEventListener("click", openFriday);
 saturday.addEventListener("click", openSaturday);
 topBarDaySelector.addEventListener("click", daySelector);
+timerCloseBtn.addEventListener("click", closeTimerPopup);
 //deleteItem event listeners for each day
-day1.addEventListener("click", deleteItem);
-day2.addEventListener("click", deleteItem);
-day3.addEventListener("click", deleteItem);
-day4.addEventListener("click", deleteItem);
-day5.addEventListener("click", deleteItem);
-day6.addEventListener("click", deleteItem);
-day7.addEventListener("click", deleteItem);
+day1.addEventListener("click", tasksFunctions);
+day2.addEventListener("click", tasksFunctions);
+day3.addEventListener("click", tasksFunctions);
+day4.addEventListener("click", tasksFunctions);
+day5.addEventListener("click", tasksFunctions);
+day6.addEventListener("click", tasksFunctions);
+day7.addEventListener("click", tasksFunctions);
 
 //Functions
 function addTodoItem(e) {
@@ -144,22 +147,26 @@ function openSaturday() {
   day7.classList.add("active");
   saturday.classList.add("active");
 }
-//Delete task items
-function deleteItem(e) {
+//Delete task items, mark task items as completed and timer
+function tasksFunctions(e) {
   let item = e.target;
   if (item.classList[0] === "trash-btn") {
-    let deleteItem = item.parentElement;
+    const deleteItem = item.parentElement;
     deleteItem.remove();
     for (let i = 0; i < todoDays.length; i++) {
       if (todoDays[i].classList.contains("active")) {
         taskNum[i].innerText--;
       }
     }
-  }
-  if (item.classList[0] === "completed-btn") {
+  } else if (item.classList[0] === "completed-btn") {
     const completedItem = item.parentElement;
     completedItem.classList.toggle("completed");
+  } else if (item.classList[0] === "timer-btn") {
+    timerPopup.classList.add("active");
   }
+}
+function closeTimerPopup() {
+  timerPopup.classList.remove("active");
 }
 
 function daySelector(e) {
