@@ -10,6 +10,9 @@ const todoItem = document.querySelectorAll(".todo-container");
 const topBarDaySelector = document.querySelector(".day-selector-container");
 const timerPopup = document.querySelector(".timer-popup-container");
 const timerCloseBtn = document.querySelector(".close-popup-btn");
+const timerElement = document.querySelector(".timer-countdown");
+const timerStartStopBtn = document.querySelector(".timer-start-stop");
+const filterTasksBtn = document.querySelector(".select-todo");
 //days of the week selectors
 const sunday = document.querySelector(".sunday");
 const monday = document.querySelector(".monday");
@@ -37,6 +40,35 @@ friday.addEventListener("click", openFriday);
 saturday.addEventListener("click", openSaturday);
 topBarDaySelector.addEventListener("click", daySelector);
 timerCloseBtn.addEventListener("click", closeTimerPopup);
+filterTasksBtn.addEventListener("click", filterTasks);
+
+//event listener to start and stop timer
+
+let startingTime = 25;
+let time = startingTime * 60;
+let timeInterval = -1;
+timerStartStopBtn.addEventListener("click", function (e) {
+  if (timeInterval == -1) {
+    timeInterval = setInterval(function () {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      timerElement.innerHTML = `${minutes}:${seconds}`;
+      time--;
+      time = time < 0 ? 0 : time;
+    }, 1000);
+    timerStartStopBtn.innerHTML = "Stop";
+    timerStartStopBtn.style.backgroundColor = "#ff0000";
+  } else {
+    clearInterval(timeInterval);
+    timeInterval = -1;
+    time = startingTime * 60;
+    timerElement.innerHTML = "Start Pomodoro";
+    timerStartStopBtn.innerHTML = "Start";
+    timerStartStopBtn.style.backgroundColor = "#403c3c";
+  }
+});
+
 //deleteItem event listeners for each day
 day1.addEventListener("click", tasksFunctions);
 day2.addEventListener("click", tasksFunctions);
@@ -165,10 +197,11 @@ function tasksFunctions(e) {
     timerPopup.classList.add("active");
   }
 }
+//close timer window
 function closeTimerPopup() {
   timerPopup.classList.remove("active");
 }
-
+//day selector with topbar arrows
 function daySelector(e) {
   let item = e.target;
   if (item.classList[0] === "backwards-selector") {
@@ -218,4 +251,32 @@ function daySelector(e) {
       openSunday();
     }
   }
+}
+
+function filterTasks(e) {
+  todoDaysCanvas.forEach((day) => {
+    const tasks = day.childNodes;
+    console.log(tasks);
+    tasks.forEach((task) => {
+      switch (e.target.value) {
+        case "all":
+          task.style.display = "flex";
+          break;
+        case "completed":
+          if (task.classList.contains("completed")) {
+            task.style.display = "flex";
+          } else {
+            task.style.display = "none";
+          }
+          break;
+        case "uncompleted":
+          if (!task.classList.contains("completed")) {
+            task.style.display = "flex";
+          } else {
+            task.style.display = "none";
+          }
+          break;
+      }
+    });
+  });
 }

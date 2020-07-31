@@ -101,10 +101,10 @@
             </div>
             <div class="todo-list-options">
               <div class="select-container">
-                <select name="select-todo" id="select-todo">
+                <select name="select-todo" class="select-todo">
                   <option value="all">All</option>
-                  <option value="Done">Done</option>
-                  <option value="Uncompleted">Uncompleted</option>
+                  <option value="completed">Completed</option>
+                  <option value="uncompleted">Uncompleted</option>
                 </select>
               </div>
             </div>
@@ -123,10 +123,9 @@
       <div class="timer-popup-container">
         <div class="timerpopup">
           <button class="close-popup-btn">X</button>
-          <p>25:00</p>
-          <div class="popup-btns">
-            <button>Start</button>
-            <button>Stop</button>
+          <p class="timer-countdown">Start Pomodoro</p>
+          <div class="popup-btn">
+            <button class="timer-start-stop">Start</button>
           </div>
         </div>
       </div>

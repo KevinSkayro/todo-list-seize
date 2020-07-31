@@ -202,7 +202,7 @@ form {
   width: 100%;
 }
 
-#select-todo {
+.select-todo {
   -moz-appearance: none;
   -ms-appearence: none;
   -webkit-appearance: none;
@@ -217,7 +217,7 @@ form {
   flex: 1;
   padding: 0.8rem;
 }
-#select-todo::-ms-expand {
+.select-todo::-ms-expand {
   display: none;
 }
 .select-container {
@@ -371,7 +371,7 @@ form {
   font-size: 3rem;
   pointer-events: all;
 }
-.popup-btns button {
+.popup-btn button {
   background-color: #403c3c;
   border: none;
   border-radius: 1rem;
