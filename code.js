@@ -30,6 +30,7 @@ const day6 = document.querySelector(".day6");
 const day7 = document.querySelector(".day7");
 
 //Event listeners
+document.addEventListener("DOMContentLoaded", getLocalTasks);
 todoInputBtn.addEventListener("click", addTodoItem);
 sunday.addEventListener("click", openSunday);
 monday.addEventListener("click", openMonday);
@@ -284,7 +285,7 @@ function filterTasks(e) {
     });
   });
 }
-function saveLocalTasks(todo) {
+function saveLocalTasks(task) {
   if (day1.classList.contains("active")) {
     let taskList1;
     if (localStorage.getItem("taskList1") === null) {
@@ -293,7 +294,7 @@ function saveLocalTasks(todo) {
       taskList1 = JSON.parse(localStorage.getItem("taskList1"));
     }
 
-    taskList1.push(todo);
+    taskList1.push(task);
     localStorage.setItem("taskList1", JSON.stringify(taskList1));
   } else if (day2.classList.contains("active")) {
     let taskList2;
@@ -303,7 +304,7 @@ function saveLocalTasks(todo) {
       taskList2 = JSON.parse(localStorage.getItem("taskList2"));
     }
 
-    taskList2.push(todo);
+    taskList2.push(task);
     localStorage.setItem("taskList2", JSON.stringify(taskList2));
   } else if (day3.classList.contains("active")) {
     let taskList3;
@@ -313,7 +314,7 @@ function saveLocalTasks(todo) {
       taskList3 = JSON.parse(localStorage.getItem("taskList3"));
     }
 
-    taskList3.push(todo);
+    taskList3.push(task);
     localStorage.setItem("taskList3", JSON.stringify(taskList3));
   } else if (day4.classList.contains("active")) {
     let taskList4;
@@ -323,7 +324,7 @@ function saveLocalTasks(todo) {
       taskList4 = JSON.parse(localStorage.getItem("taskList4"));
     }
 
-    taskList4.push(todo);
+    taskList4.push(task);
     localStorage.setItem("taskList4", JSON.stringify(taskList4));
   } else if (day5.classList.contains("active")) {
     let taskList5;
@@ -333,7 +334,7 @@ function saveLocalTasks(todo) {
       taskList5 = JSON.parse(localStorage.getItem("taskList5"));
     }
 
-    taskList5.push(todo);
+    taskList5.push(task);
     localStorage.setItem("taskList5", JSON.stringify(taskList5));
   } else if (day6.classList.contains("active")) {
     let taskList6;
@@ -343,7 +344,7 @@ function saveLocalTasks(todo) {
       taskList6 = JSON.parse(localStorage.getItem("taskList6"));
     }
 
-    taskList6.push(todo);
+    taskList6.push(task);
     localStorage.setItem("taskList6", JSON.stringify(taskList6));
   } else if (day7.classList.contains("active")) {
     let taskList7;
@@ -353,7 +354,240 @@ function saveLocalTasks(todo) {
       taskList7 = JSON.parse(localStorage.getItem("taskList7"));
     }
 
-    taskList7.push(todo);
+    taskList7.push(task);
     localStorage.setItem("taskList7", JSON.stringify(taskList7));
   }
+}
+function getLocalTasks() {
+  //task recovery for day1
+  let taskList1;
+  if (localStorage.getItem("taskList1") === null) {
+    taskList1 = [];
+  } else {
+    taskList1 = JSON.parse(localStorage.getItem("taskList1"));
+  }
+  taskList1.forEach((task) => {
+    const divItem = document.createElement("div");
+    divItem.classList.add("todo-container");
+    //adding classes to identify different day's tasks
+    const newItem = document.createElement("li");
+    newItem.innerText = task;
+    newItem.classList.add("todo-item");
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
+    //this appends the input to the active day in the app
+    divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
+    day1.appendChild(divItem);
+  });
+
+  //task recovery for day2
+  let taskList2;
+  if (localStorage.getItem("taskList2") === null) {
+    taskList2 = [];
+  } else {
+    taskList2 = JSON.parse(localStorage.getItem("taskList2"));
+  }
+  taskList2.forEach((task) => {
+    const divItem = document.createElement("div");
+    divItem.classList.add("todo-container");
+    //adding classes to identify different day's tasks
+    const newItem = document.createElement("li");
+    newItem.innerText = task;
+    newItem.classList.add("todo-item");
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
+    //this appends the input to the active day in the app
+    divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
+    day2.appendChild(divItem);
+  });
+
+  //task recovery for day3
+  let taskList3;
+  if (localStorage.getItem("taskList3") === null) {
+    taskList3 = [];
+  } else {
+    taskList3 = JSON.parse(localStorage.getItem("taskList3"));
+  }
+  taskList3.forEach((task) => {
+    const divItem = document.createElement("div");
+    divItem.classList.add("todo-container");
+    //adding classes to identify different day's tasks
+    const newItem = document.createElement("li");
+    newItem.innerText = task;
+    newItem.classList.add("todo-item");
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
+    //this appends the input to the active day in the app
+    divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
+    day3.appendChild(divItem);
+  });
+
+  //task recovery for day4
+
+  let taskList4;
+  if (localStorage.getItem("taskList4") === null) {
+    taskList4 = [];
+  } else {
+    taskList4 = JSON.parse(localStorage.getItem("taskList4"));
+  }
+  taskList4.forEach((task) => {
+    const divItem = document.createElement("div");
+    divItem.classList.add("todo-container");
+    //adding classes to identify different day's tasks
+    const newItem = document.createElement("li");
+    newItem.innerText = task;
+    newItem.classList.add("todo-item");
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
+    //this appends the input to the active day in the app
+    divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
+    day4.appendChild(divItem);
+  });
+
+  //task recovery for day5
+  let taskList5;
+  if (localStorage.getItem("taskList5") === null) {
+    taskList5 = [];
+  } else {
+    taskList5 = JSON.parse(localStorage.getItem("taskList5"));
+  }
+  taskList5.forEach((task) => {
+    const divItem = document.createElement("div");
+    divItem.classList.add("todo-container");
+    //adding classes to identify different day's tasks
+    const newItem = document.createElement("li");
+    newItem.innerText = task;
+    newItem.classList.add("todo-item");
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
+    //this appends the input to the active day in the app
+    divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
+    day5.appendChild(divItem);
+  });
+
+  //task recovery for day6
+  let taskList6;
+  if (localStorage.getItem("taskList6") === null) {
+    taskList6 = [];
+  } else {
+    taskList6 = JSON.parse(localStorage.getItem("taskList6"));
+  }
+  taskList6.forEach((task) => {
+    const divItem = document.createElement("div");
+    divItem.classList.add("todo-container");
+    //adding classes to identify different day's tasks
+    const newItem = document.createElement("li");
+    newItem.innerText = task;
+    newItem.classList.add("todo-item");
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
+    //this appends the input to the active day in the app
+    divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
+    day6.appendChild(divItem);
+  });
+
+  //task recovery for day7
+  let taskList7;
+  if (localStorage.getItem("taskList7") === null) {
+    taskList7 = [];
+  } else {
+    taskList7 = JSON.parse(localStorage.getItem("taskList7"));
+  }
+  taskList7.forEach((task) => {
+    const divItem = document.createElement("div");
+    divItem.classList.add("todo-container");
+    //adding classes to identify different day's tasks
+    const newItem = document.createElement("li");
+    newItem.innerText = task;
+    newItem.classList.add("todo-item");
+    //Check mark button
+    const completedBtn = document.createElement("button");
+    completedBtn.innerHTML = "<i class='fas fa-check'></i>";
+    completedBtn.classList.add("completed-btn");
+    //Trash button
+    const trashBtn = document.createElement("button");
+    trashBtn.innerHTML = "<i class='fas fa-trash-alt'></i>";
+    trashBtn.classList.add("trash-btn");
+    const timerBtn = document.createElement("button");
+    timerBtn.innerHTML = "<i class='fas fa-clock'></i>";
+    timerBtn.classList.add("timer-btn");
+    //this appends the input to the active day in the app
+    divItem.appendChild(newItem);
+    divItem.appendChild(completedBtn);
+    divItem.appendChild(trashBtn);
+    divItem.appendChild(timerBtn);
+    day7.appendChild(divItem);
+  });
 }
