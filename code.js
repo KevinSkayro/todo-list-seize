@@ -189,6 +189,7 @@ function tasksFunctions(e) {
   let item = e.target;
   if (item.classList[0] === "trash-btn") {
     const deleteItem = item.parentElement;
+    removeLocalTasks(deleteItem);
     deleteItem.remove();
     for (let i = 0; i < todoDays.length; i++) {
       if (todoDays[i].classList.contains("active")) {
@@ -390,6 +391,7 @@ function getLocalTasks() {
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
     day1.appendChild(divItem);
+    taskNum[0].innerText++;
   });
 
   //task recovery for day2
@@ -423,6 +425,7 @@ function getLocalTasks() {
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
     day2.appendChild(divItem);
+    taskNum[1].innerText++;
   });
 
   //task recovery for day3
@@ -456,6 +459,7 @@ function getLocalTasks() {
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
     day3.appendChild(divItem);
+    taskNum[2].innerText++;
   });
 
   //task recovery for day4
@@ -490,6 +494,7 @@ function getLocalTasks() {
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
     day4.appendChild(divItem);
+    taskNum[3].innerText++;
   });
 
   //task recovery for day5
@@ -523,6 +528,7 @@ function getLocalTasks() {
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
     day5.appendChild(divItem);
+    taskNum[4].innerText++;
   });
 
   //task recovery for day6
@@ -556,6 +562,7 @@ function getLocalTasks() {
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
     day6.appendChild(divItem);
+    taskNum[5].innerText++;
   });
 
   //task recovery for day7
@@ -589,5 +596,83 @@ function getLocalTasks() {
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
     day7.appendChild(divItem);
+    taskNum[6].innerText++;
   });
+}
+
+//remove local tasks
+function removeLocalTasks(task) {
+  //day1
+  const taskIndex = task.children[0].innerText;
+  if (day1.classList.contains("active")) {
+    let taskList1;
+    if (localStorage.getItem("taskList1") === null) {
+      taskList1 = [];
+    } else {
+      taskList1 = JSON.parse(localStorage.getItem("taskList1"));
+    }
+
+    taskList1.splice(taskList1.indexOf(taskIndex), 1);
+    localStorage.setItem("taskList1", JSON.stringify(taskList1));
+  } else if (day2.classList.contains("active")) {
+    //day2
+    let taskList2;
+    if (localStorage.getItem("taskList2") === null) {
+      taskList2 = [];
+    } else {
+      taskList2 = JSON.parse(localStorage.getItem("taskList2"));
+    }
+    taskList2.splice(taskList2.indexOf(taskIndex), 1);
+    localStorage.setItem("taskList2", JSON.stringify(taskList2));
+  } else if (day3.classList.contains("active")) {
+    //day3
+    let taskList3;
+    if (localStorage.getItem("taskList3") === null) {
+      taskList3 = [];
+    } else {
+      taskList3 = JSON.parse(localStorage.getItem("taskList3"));
+    }
+    taskList3.splice(taskList3.indexOf(taskIndex), 1);
+    localStorage.setItem("taskList3", JSON.stringify(taskList3));
+  } else if (day4.classList.contains("active")) {
+    //day4
+    let taskList4;
+    if (localStorage.getItem("taskList4") === null) {
+      taskList4 = [];
+    } else {
+      taskList4 = JSON.parse(localStorage.getItem("taskList4"));
+    }
+    taskList4.splice(taskList4.indexOf(taskIndex), 1);
+    localStorage.setItem("taskList4", JSON.stringify(taskList4));
+  } else if (day5.classList.contains("active")) {
+    //day5
+    let taskList5;
+    if (localStorage.getItem("taskList5") === null) {
+      taskList5 = [];
+    } else {
+      taskList5 = JSON.parse(localStorage.getItem("taskList5"));
+    }
+    taskList5.splice(taskList5.indexOf(taskIndex), 1);
+    localStorage.setItem("taskList5", JSON.stringify(taskList5));
+  } else if (day6.classList.contains("active")) {
+    //day6
+    let taskList6;
+    if (localStorage.getItem("taskList6") === null) {
+      taskList6 = [];
+    } else {
+      taskList6 = JSON.parse(localStorage.getItem("taskList6"));
+    }
+    taskList6.splice(taskList6.indexOf(taskIndex), 1);
+    localStorage.setItem("taskList6", JSON.stringify(taskList6));
+  } else {
+    //day7
+    let taskList7;
+    if (localStorage.getItem("taskList7") === null) {
+      taskList7 = [];
+    } else {
+      taskList7 = JSON.parse(localStorage.getItem("taskList7"));
+    }
+    taskList7.splice(taskList7.indexOf(taskIndex), 1);
+    localStorage.setItem("taskList7", JSON.stringify(taskList7));
+  }
 }
