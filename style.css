@@ -78,8 +78,7 @@ body {
   margin: 2rem 1rem;
   justify-content: center;
 }
-.todo-days h3,
-.todo-lists h3 {
+.todo-days h3 {
   text-align: center;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -107,22 +106,8 @@ hr {
   border-top: 2px solid #a6a6a6;
   margin: 0 1rem 1rem;
 }
-.todo-lists {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.todo-lists button {
-  width: 6rem;
-  height: 2rem;
-  cursor: pointer;
-  color: #fff;
-  background-color: #575353;
-  border: none;
-  border-radius: 0.5rem;
-}
-/*selected day style*/
+
+/*selected day style start*/
 
 .sunday.active,
 .monday.active,
@@ -136,6 +121,7 @@ hr {
   padding: 4px;
   font-weight: 700;
 }
+/*selected day style end*/
 
 /*Sidebar style end*/
 
@@ -172,7 +158,6 @@ hr {
   margin: 1rem 2%;
   background-color: #d9d9d9;
   padding: 0.6rem 1rem;
-  /* width: 0%; */
   flex: 1;
   border-radius: 1rem;
 }
@@ -244,7 +229,9 @@ form {
   transition: 0.25s all ease;
   padding: 0 0.7rem 0 0;
 }
-/*background style for each day*/
+/*todo main container style end*/
+
+/*background style for each day start*/
 .day1::after,
 .day2::after,
 .day3::after,
@@ -289,8 +276,9 @@ form {
 .day7.active {
   transform: translateY(0);
 }
+/*background style for each day end*/
 
-/*style of generated tasks*/
+/*style of generated tasks start*/
 .todo-container {
   background-color: #575353;
   margin: 0.6rem 2%;
@@ -309,7 +297,8 @@ form {
 .task-checkbox {
   margin: 0 1rem;
 }
-/*task btns*/
+/*style of generated tasks end*/
+/*task btns start*/
 .completed-btn,
 .trash-btn,
 .timer-btn {
@@ -331,14 +320,16 @@ form {
 .fa-clock {
   pointer-events: none;
 }
-/*Completed tasks style*/
+/*task btns end*/
+/*Completed tasks style start*/
 .completed {
   text-decoration: line-through;
   color: #d9d9d9;
   background-color: #a6a6a6;
 }
-
+/*Completed tasks style end*/
 /*todo main container style end*/
+
 /*timer popup style start*/
 .timer-popup-container {
   position: fixed;
@@ -399,3 +390,7 @@ form {
   cursor: pointer;
 }
 /*timer popup style end*/
+
+/*iPad Pro 10.5inch and similar size tablets start*/
+@media only screen and (max-width: 834px) {
+}
