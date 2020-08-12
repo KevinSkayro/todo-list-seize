@@ -4,8 +4,10 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-body {
+
+.main-global {
   overflow: hidden;
+  position: relative;
 }
 /*Topbar style start*/
 .topbar {
@@ -25,6 +27,13 @@ body {
   display: flex;
   align-items: center;
   padding-left: 30px;
+}
+.topbar-logo img {
+  position: absolute;
+  height: 51px;
+}
+.topbar-logo .mobile-logo {
+  opacity: 0;
 }
 .day-selector {
   flex: 2;
@@ -149,7 +158,6 @@ hr {
   position: absolute;
   transform: translateY(100%);
   overflow-y: scroll;
-  min-width: 740px;
 }
 .todo-list-input {
   display: flex;
@@ -241,7 +249,7 @@ form {
 .day7::after {
   content: "";
   background: url(./IMG/Background-pc/Sunday-pc.png) center;
-  opacity: 0.5;
+  opacity: 0.4;
   top: 0;
   right: 0;
   bottom: 0;
@@ -344,15 +352,18 @@ form {
   opacity: 0;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
+  z-index: -1;
 }
 .timer-popup-container.active {
   opacity: 1;
   pointer-events: all;
+  z-index: 1;
 }
 .timerpopup {
   background-color: #fff;
   position: absolute;
   width: 30%;
+  min-width: 400px;
   height: 30vh;
   border-radius: 1rem;
   display: flex;
@@ -392,5 +403,165 @@ form {
 /*timer popup style end*/
 
 /*iPad Pro 10.5inch and similar size tablets start*/
-@media only screen and (max-width: 834px) {
+@media only screen and (max-width: 912px) {
+  /*topbar day selector start*/
+
+  /*topbar day selector end*/
+  .day-selector div {
+    margin: 0 10px;
+  }
+  /*hamburger menu style start*/
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    cursor: pointer;
+  }
+  .row {
+    width: 30px;
+    height: 4px;
+    margin: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .line1.active {
+    transform: rotate(-45deg) translate(-8px, 7px);
+  }
+  .line2.active {
+    opacity: 0;
+  }
+  .line3.active {
+    transform: rotate(45deg) translate(-6px, -6px);
+  }
+  /*hamburger menu style end*/
+
+  /*Background image start*/
+  .day1::after {
+    background: url(./IMG/Background-mobile/Sunday-m.png) center;
+  }
+  .day2::after {
+    background: url(./IMG/Background-mobile/Monday-m.png) center;
+  }
+  .day3::after {
+    background: url(./IMG/Background-mobile/Tuesday-m.png) center;
+  }
+  .day4::after {
+    background: url(./IMG/Background-mobile/Wednesday-m.png) center;
+  }
+  .day5::after {
+    background: url(./IMG/Background-mobile/Thursday-m.png) center;
+  }
+  .day6::after {
+    background: url(./IMG/Background-mobile/Friday-m.png) center;
+  }
+  .day7::after {
+    background: url(./IMG/Background-mobile/Saturday-m.png) center;
+  }
+  /*Background image end*/
+
+  /*Mobile canvas size start*/
+  .todo-canva {
+    width: 100vw;
+  }
+  /*Mobile canvas size start*/
+
+  /*mobile sidebar slide style start*/
+  .side-bar {
+    position: absolute;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+    top: 64px;
+    right: 0;
+    z-index: 1;
+  }
+  .side-bar.active {
+    transform: translateX(0%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  /*mobile sidebar slide style end*/
 }
+/*iPad Pro 10.5inch and similar size tablets end*/
+
+/*screen size of 735 and less start*/
+@media only screen and (max-width: 735px) {
+  /*input section style start*/
+  .todo-list-input-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .todo-list-input {
+    width: 96vw;
+  }
+  /*input section style end*/
+
+  /*backgroud image start*/
+  .day1::after,
+  .day2::after,
+  .day3::after,
+  .day4::after,
+  .day5::after,
+  .day6::after,
+  .day7::after {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  /*backgroud image end*/
+}
+/*screen size of 735 and less end*/
+
+/*screen size of 630 and less start*/
+@media only screen and (max-width: 630px) {
+  .topbar-logo .mobile-logo {
+    opacity: 1;
+  }
+  .topbar-logo .desk-logo {
+    opacity: 0;
+  }
+}
+/*screen size of 630 and less end*/
+
+/*screen size of 500 and less start*/
+@media only screen and (max-width: 500px) {
+  .day-selected {
+    font-size: 1.5rem;
+    width: 145px;
+  }
+  .day-selector div {
+    margin: 0 10px;
+  }
+  .backwards-selector,
+  .forwards-selector {
+    width: 30px;
+  }
+  .todo-input {
+    width: calc(100% - 45px);
+  }
+  .todo-list-input input {
+    flex: none;
+  }
+  form {
+    justify-content: space-between;
+  }
+}
+/*screen size of 500 and less end*/
+
+/*screen size of 420 and less start*/
+@media only screen and (max-width: 420px) {
+  .day-selector {
+    font-size: 1.3rem;
+    margin: 0 10px;
+  }
+  .day-selector div {
+    margin: 0;
+  }
+  .day-selected {
+    width: 130px;
+  }
+  .timerpopup {
+    min-width: 320px;
+    font-size: 2rem;
+  }
+}
+/*screen size of 420 and less end*/

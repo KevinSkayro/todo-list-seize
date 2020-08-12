@@ -13,6 +13,9 @@ const timerCloseBtn = document.querySelector(".close-popup-btn");
 const timerElement = document.querySelector(".timer-countdown");
 const timerStartStopBtn = document.querySelector(".timer-start-stop");
 const filterTasksBtn = document.querySelector(".select-todo");
+const burgerMenuBtn = document.querySelector(".hamburger-menu");
+const sideBar = document.querySelector(".side-bar");
+const burgerRow = document.querySelectorAll(".row");
 //days of the week selectors
 const sunday = document.querySelector(".sunday");
 const monday = document.querySelector(".monday");
@@ -42,6 +45,12 @@ saturday.addEventListener("click", openSaturday);
 topBarDaySelector.addEventListener("click", daySelector);
 timerCloseBtn.addEventListener("click", closeTimerPopup);
 filterTasksBtn.addEventListener("click", filterTasks);
+burgerMenuBtn.addEventListener("click", function () {
+  sideBar.classList.toggle("active");
+  burgerRow.forEach((row) => {
+    row.classList.toggle("active");
+  });
+});
 
 //event listener to start and stop timer
 
