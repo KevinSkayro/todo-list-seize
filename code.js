@@ -66,15 +66,23 @@ timerStartStopBtn.addEventListener("click", function (e) {
       timerElement.innerHTML = `${minutes}:${seconds}`;
       time--;
       time = time < 0 ? 0 : time;
+      if (timerElement.innerText == "0:00") {
+        timerElement.innerText = "Start Pomodoro";
+        timerStartStopBtn.innerText = "Start Again";
+        timerStartStopBtn.style.backgroundColor = "#403c3c";
+        clearInterval(timeInterval);
+        timeInterval = -1;
+        time = startingTime * 60;
+      }
     }, 1000);
-    timerStartStopBtn.innerHTML = "Stop";
+    timerStartStopBtn.innerText = "Stop";
     timerStartStopBtn.style.backgroundColor = "#ff0000";
   } else {
     clearInterval(timeInterval);
     timeInterval = -1;
     time = startingTime * 60;
-    timerElement.innerHTML = "Start Pomodoro";
-    timerStartStopBtn.innerHTML = "Start";
+    timerElement.innerText = "Start Pomodoro";
+    timerStartStopBtn.innerText = "Start";
     timerStartStopBtn.style.backgroundColor = "#403c3c";
   }
 });
