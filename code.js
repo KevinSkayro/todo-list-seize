@@ -128,11 +128,11 @@ function addTodoItem(e) {
     divItem.appendChild(completedBtn);
     divItem.appendChild(trashBtn);
     divItem.appendChild(timerBtn);
-    for (let i = 0; i < todoDaysCanvas.length; i++) {
-      if (todoDaysCanvas[i].classList.contains("active")) {
-        todoDaysCanvas[i].appendChild(divItem);
+    todoDaysCanvas.forEach((day) => {
+      if (day.classList.contains("active")) {
+        day.appendChild(divItem);
       }
-    }
+    });
     // Updates the tasks quantity num on sidebar
     for (let i = 0; i < todoDays.length; i++) {
       if (todoDays[i].classList.contains("active")) {
