@@ -2,33 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seize Time</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
+    <meta
+      name="description"
+      content="Get your to-do list done in an organized and effective way using the seize time web app"
+    />
+    <meta name="keywords" content="to-do list, todo list, tasks, seize time, kevin skayro" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" />
     <!-- favicon links -->
     <link rel="apple-touch-icon" sizes="192x192" href="./favicons/android-chrome-192x192.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#2b5797" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="manifest" href="./favicons/site.webmanifest" />
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/reset.css " />
+    <title>Seize Time</title>
   </head>
   <body onload="FocusOnInput()">
     <div class="main-global">
       <div class="topbar">
         <div class="topbar-logo">
           <img src="./IMG/Logo.png" class="desk-logo" alt="a clock giving a sense of time passing, desktop logo" />
-          <img src="./IMG/Logo-Mobile.png" class="mobile-logo" alt="a clock giving a sense of time passing, mobile logo" />
+          <img
+            src="./IMG/Logo-Mobile.png"
+            class="mobile-logo"
+            alt="a clock giving a sense of time passing, mobile logo"
+          />
         </div>
         <div class="day-selector">
           <div class="day-selector-container">
-            <div class="backwards-selector"><i class="fas fa-angle-left"></i></div>
+            <div class="backwards-selector">
+              <i class="fas fa-angle-left"></i>
+            </div>
             <div class="day-selected">
               <span>Sunday</span>
             </div>
-            <div class="forwards-selector"><i class="fas fa-angle-right"></i></div>
+            <div class="forwards-selector">
+              <i class="fas fa-angle-right"></i>
+            </div>
           </div>
         </div>
         <div class="hamburger-menu">
@@ -99,13 +114,19 @@
             </div>
           </div>
           <hr />
+          <div class="sidebar-timer-container">
+            <p data-timer-countdown1>25:00</p>
+            <button data-start-stop-btn class="sidebar-btn">Start</button>
+          </div>
         </div>
         <div class="todo-list-main-container">
           <div class="todo-list-input-container">
             <div class="todo-list-input">
               <form action="">
                 <input type="text" class="todo-input" placeholder="Add new task" />
-                <button type="submit" class="btn-input"><i class="fas fa-plus-circle"></i></button>
+                <button type="submit" class="btn-input">
+                  <i class="fas fa-plus-circle"></i>
+                </button>
               </form>
             </div>
             <div class="todo-list-options">
@@ -132,14 +153,18 @@
       <div class="timer-popup-container">
         <div class="timerpopup">
           <button class="close-popup-btn">X</button>
-          <p class="timer-countdown">Start Pomodoro</p>
+          <p data-timer-countdown2 class="timer-countdown">Start Pomodoro</p>
           <div class="popup-btn">
-            <button class="timer-start-stop">Start</button>
+            <button data-start-stop-btn>Start</button>
           </div>
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+      integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="
+      crossorigin="anonymous"
+    ></script>
     <script src="./code.js"></script>
   </body>
 </html>
