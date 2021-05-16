@@ -12,7 +12,8 @@ const timerPopup = document.querySelector(".timer-popup-container");
 const timerCloseBtn = document.querySelector(".close-popup-btn");
 const timerElement = document.querySelector("[data-timer-countdown2]");
 const sideBarTimer = document.querySelector("[data-timer-countdown1]");
-const timerStartStopBtn = document.querySelectorAll("[data-start-stop-btn]");
+const timerStartStopBtn = document.querySelector("[data-start-stop-btn]");
+const timerStartStopSidebarBtn = document.querySelector("[data-start-stop-sidebar-btn");
 const filterTasksBtn = document.querySelector(".select-todo");
 const burgerMenuBtn = document.querySelector(".hamburger-menu");
 const sideBar = document.querySelector(".side-bar");
@@ -58,49 +59,9 @@ burgerMenuBtn.addEventListener("click", function () {
 let startingTime = 25;
 let time = startingTime * 60;
 let timeInterval = -1;
-timerStartStopBtn.forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    if (timeInterval == -1) {
-      timeInterval = setInterval(function () {
-        const minutes = Math.floor(time / 60);
-        let seconds = time % 60;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        timerElement.innerHTML = `${minutes}:${seconds}`;
-        sideBarTimer.innerHTML = `${minutes}:${seconds}`;
-        time--;
-        time = time < 0 ? 0 : time;
-        if (timerElement.innerText == "0:00") {
-          timerElement.innerText = "Start Pomodoro";
-          sideBarTimer.innerText = "0:00";
-          btn.innerText = "Start Again";
-          btn.style.backgroundColor = "#393e46";
-          if (btn.classList.contains("sidebar-btn")) {
-            btn.style.backgroundColor = "#eeeeee";
-            btn.style.color = "#000";
-          }
-          clearInterval(timeInterval);
-          timeInterval = -1;
-          time = startingTime * 60;
-        }
-      }, 1000);
-      btn.innerText = "Stop";
-      btn.style.backgroundColor = "#00adb5";
-      btn.style.color = "#fff";
-    } else {
-      clearInterval(timeInterval);
-      timeInterval = -1;
-      time = startingTime * 60;
-      timerElement.innerText = "Start Pomodoro";
-      sideBarTimer.innerText = "25:00";
-      btn.innerText = "Start";
-      btn.style.backgroundColor = "#393e46";
-      if (btn.classList.contains("sidebar-btn")) {
-        btn.style.backgroundColor = "#eeeeee";
-        btn.style.color = "#000";
-      }
-    }
-  });
-});
+
+timerStartStopBtn.addEventListener("click", startStopTimer);
+timerStartStopSidebarBtn.addEventListener("click", startStopTimer);
 
 //deleteItem event listeners for each day
 day1.addEventListener("click", tasksFunctions);
@@ -112,6 +73,48 @@ day6.addEventListener("click", tasksFunctions);
 day7.addEventListener("click", tasksFunctions);
 
 //Functions
+function startStopTimer() {
+  if (timeInterval == -1) {
+    timeInterval = setInterval(function () {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      timerElement.innerHTML = `${minutes}:${seconds}`;
+      sideBarTimer.innerHTML = `${minutes}:${seconds}`;
+      time--;
+      time = time < 0 ? 0 : time;
+      if (timerElement.innerText == "0:00") {
+        timerElement.innerText = "Start Pomodoro";
+        sideBarTimer.innerText = "0:00";
+        timerStartStopBtn.innerText = "Start Again";
+        timerStartStopSidebarBtn.innerText = "Start Again";
+        timerStartStopBtn.style.backgroundColor = "#393e46";
+        timerStartStopSidebarBtn.style.backgroundColor = "#eeeeee";
+        timerStartStopSidebarBtn.style.color = "#000";
+        clearInterval(timeInterval);
+        timeInterval = -1;
+        time = startingTime * 60;
+      }
+    }, 1000);
+    timerStartStopBtn.innerText = "Stop";
+    timerStartStopSidebarBtn.innerText = "Stop";
+    timerStartStopBtn.style.backgroundColor = "#00adb5";
+    timerStartStopSidebarBtn.style.backgroundColor = "#00adb5";
+    timerStartStopBtn.style.color = "#fff";
+    timerStartStopSidebarBtn.style.color = "#fff";
+  } else {
+    clearInterval(timeInterval);
+    timeInterval = -1;
+    time = startingTime * 60;
+    timerElement.innerText = "Start Pomodoro";
+    sideBarTimer.innerText = "25:00";
+    timerStartStopBtn.innerText = "Start";
+    timerStartStopSidebarBtn.innerText = "Start";
+    timerStartStopBtn.style.backgroundColor = "#393e46";
+    timerStartStopSidebarBtn.style.backgroundColor = "#eeeeee";
+    timerStartStopSidebarBtn.style.color = "#000";
+  }
+}
 function addTodoItem(e) {
   //prevent btn from reseting page
   e.preventDefault();
