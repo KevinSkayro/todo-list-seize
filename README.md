@@ -1,5 +1,14 @@
 # to-do list "Seize Time"
 
+### Technologies:
+
+<img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
+<img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
+<img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
+
+## <br />
+
+
 ## version 1
 
 I learned a lot of things along the process. The simple fact that I did all this by myself with the knowledge that I acquired in the past forced me to think a lot.
@@ -17,3 +26,21 @@ Added a new color scheme that looks better to my eye, I'm not a design expert, b
 Added a second way to access the pomodoro countdown feature, this is located on the sidebar if you're on a computer or opening the burger menu on mobile devices. This change was made with the intent to offer a view of the countdown even if you close the popup which in my opinion this benefits computer users for the most part.
 
 As you might've noticed I used data attributes on the JS selectors only on the new changes that I made, this is one of the many things I've learned. The purpose of using data attributes instead of just classes or IDs is to keep the CSS selectors separated from JS selectors, making the code more maintainable for future changes. If you wonder why I didn't change all the selectors to data attributes, that's because I want people to see the difference, but for sure I'm using data attributes for my future projects.
+
+## <br />
+
+### Connect with me:
+
+[<img align="left" alt="kevinskayro.co" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][portfolio]
+[<img align="left" alt="kevinskayro.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
+[<img align="left" alt="kevinskayro | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />][youtube]
+[<img align="left" alt="kevinskayro | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
+[<img align="left" alt="kevinskayro | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
+[<img align="left" alt="kevinskayro | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
+
+[website]: https://kevinskayro.com/
+[portfolio]: https://kevinskayro.co/
+[twitter]: https://twitter.com/Kevinskayro
+[youtube]: https://www.youtube.com/channel/UC4SZMSA6juTx9aCCCsu-0iw
+[instagram]: https://www.instagram.com/kevinskayro_journey/
+[linkedin]: https://www.linkedin.com/in/kevin-castro-5b8252170/
